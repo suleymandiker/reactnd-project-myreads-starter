@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
+import getAll from './data'
 
 /* const api = "https://reactnd-books-api.udacity.com" */
 
 
 class BooksApp extends Component {
-  state = {};
+  state = {
+    books: getAll,
+  };
+
+	componentDidMount() {
+          console.log(this.state.books)
+	}
   render() {
     return (
       <div className="app">
